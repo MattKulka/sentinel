@@ -27,4 +27,21 @@ for (const s of shots) {
   console.log(`captured ${s.name}`);
   await ctx.close();
 }
+
+// Dialog open (desktop light).
+{
+  const ctx = await browser.newContext({
+    viewport: { width: 1200, height: 900 },
+    colorScheme: 'light',
+    deviceScaleFactor: 2,
+  });
+  const page = await ctx.newPage();
+  await page.goto(BASE, { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: /new shift/i }).click();
+  await page.getByRole('dialog').waitFor();
+  await page.screenshot({ path: `${OUT}/dialog-light.png` });
+  console.log('captured dialog-light');
+  await ctx.close();
+}
+
 await browser.close();

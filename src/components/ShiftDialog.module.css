@@ -1,0 +1,127 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(15 20 32 / 0.55);
+  z-index: 50;
+}
+
+.dialog {
+  width: min(30rem, 100%);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.35);
+}
+
+.heading {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.field input,
+.field select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.row .field {
+  flex: 1;
+}
+
+.error {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--danger-text);
+  background: var(--danger-surface);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.save,
+.cancel,
+.delete {
+  font: inherit;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.save {
+  color: #fff;
+  background: var(--accent-solid);
+  border: none;
+}
+
+.save:hover {
+  background: var(--accent-solid-hover);
+}
+
+.cancel {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+}
+
+.delete {
+  color: var(--danger-text);
+  background: transparent;
+  border: 1px solid var(--danger);
+}
+
+.save:focus-visible,
+.cancel:focus-visible,
+.delete:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

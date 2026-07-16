@@ -36,6 +36,31 @@ describe('App', () => {
     ).toBeInTheDocument();
   });
 
+  it('flags a conflict on both cards after creating an overlapping shift', async () => {
+    resetDb({ shifts: [] });
+    const { user } = renderWithUser(<App />);
+    await screen.findByText(/no shifts scheduled this week/i);
+
+    // Create the first shift for Ada, this week.
+    await user.click(screen.getByRole('button', { name: /new shift/i }));
+    await user.type(screen.getByLabelText(/title/i), 'Alpha');
+    await user.selectOptions(screen.getByLabelText(/assign to/i), 'Ada Lovelace');
+    await user.click(screen.getByRole('button', { name: /save shift/i }));
+
+    expect(await screen.findByRole('button', { name: /Alpha/ })).toBeInTheDocument();
+    expect(screen.queryByLabelText(/scheduling conflict/i)).not.toBeInTheDocument();
+
+    // Create a second, overlapping shift for the same person on the same day.
+    await user.click(screen.getByRole('button', { name: /new shift/i }));
+    await user.type(screen.getByLabelText(/title/i), 'Beta');
+    await user.selectOptions(screen.getByLabelText(/assign to/i), 'Ada Lovelace');
+    await user.click(screen.getByRole('button', { name: /save shift/i }));
+
+    // Both shifts are now double-booked.
+    const badges = await screen.findAllByLabelText(/scheduling conflict/i);
+    expect(badges).toHaveLength(2);
+  });
+
   it('shows an error state with a working retry', async () => {
     server.use(
       http.get('/api/employees', () => new HttpResponse(null, { status: 500 })),
