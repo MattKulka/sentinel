@@ -15,6 +15,15 @@ test('the schedule board has no detectable accessibility violations', async ({
   expect(results.violations).toEqual([]);
 });
 
+test('the schedule board is accessible in dark mode', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/');
+  await page.getByRole('button', { name: /Lead cover/ }).waitFor();
+
+  const results = await new AxeBuilder({ page }).withTags(TAGS).analyze();
+  expect(results.violations).toEqual([]);
+});
+
 test('the shift dialog has no detectable accessibility violations', async ({
   page,
 }) => {

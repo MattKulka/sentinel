@@ -40,8 +40,8 @@ html.dark {
   --text-muted: #a4adc0;
   --text-faint: #99a2b4;
 
-  --accent-solid: #6366f1;
-  --accent-solid-hover: #7c7ff5;
+  --accent-solid: #5457ea;
+  --accent-solid-hover: #4a4de0;
   --accent-surface: #21243b;
   --accent-text: #b3b6ff;
   --focus: #818cf8;
@@ -62,8 +62,8 @@ html.dark {
     --text-muted: #a4adc0;
     --text-faint: #99a2b4;
 
-    --accent-solid: #6366f1;
-    --accent-solid-hover: #7c7ff5;
+    --accent-solid: #5457ea;
+    --accent-solid-hover: #4a4de0;
     --accent-surface: #21243b;
     --accent-text: #b3b6ff;
     --focus: #818cf8;

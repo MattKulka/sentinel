@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import { WeekNav } from './components/WeekNav';
 import { WeekView } from './components/WeekView';
 import { ShiftDialog, type ShiftValues } from './components/ShiftDialog';
+import { ThemeToggle } from './components/ThemeToggle';
 import { ErrorState } from './components/states/ErrorState';
 import { Loading } from './components/states/Loading';
 import { weekDays } from './lib/date';
@@ -57,6 +58,7 @@ export default function App() {
             <p className={styles.tagline}>Team shift scheduler</p>
           </div>
         </div>
+        <ThemeToggle />
       </header>
 
       <main className={styles.main}>
