@@ -33,3 +33,6 @@ blob-report
 scripts/shots
 
 .vercel
+
+# Private interview prep — kept locally, not published
+INTERVIEW-NOTES.md

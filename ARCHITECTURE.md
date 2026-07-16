@@ -106,7 +106,7 @@ and everything pure. It:
 - derives and memoizes the conflict set from the current shifts.
 
 It's `fetch` + `useReducer` rather than a fetching library on purpose — see
-[TESTING.md](TESTING.md) and [INTERVIEW-NOTES.md](INTERVIEW-NOTES.md).
+[TESTING.md](TESTING.md) for the rationale.
 
 ## The "backend"
 
