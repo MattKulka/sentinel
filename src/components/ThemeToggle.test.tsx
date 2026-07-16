@@ -11,7 +11,9 @@ afterEach(() => {
 describe('ThemeToggle', () => {
   it('defaults to light and toggles to dark and back', async () => {
     const { user } = renderWithUser(<ThemeToggle />);
-    const button = screen.getByRole('button', { name: /switch to dark theme/i });
+    const button = screen.getByRole('button', {
+      name: /switch to dark theme/i,
+    });
     expect(button).toHaveAttribute('aria-pressed', 'false');
 
     await user.click(button);
@@ -20,13 +22,17 @@ describe('ThemeToggle', () => {
       screen.getByRole('button', { name: /switch to light theme/i }),
     ).toHaveAttribute('aria-pressed', 'true');
 
-    await user.click(screen.getByRole('button', { name: /switch to light theme/i }));
+    await user.click(
+      screen.getByRole('button', { name: /switch to light theme/i }),
+    );
     expect(document.documentElement).toHaveAttribute('data-theme', 'light');
   });
 
   it('persists the chosen theme', async () => {
     const { user } = renderWithUser(<ThemeToggle />);
-    await user.click(screen.getByRole('button', { name: /switch to dark theme/i }));
+    await user.click(
+      screen.getByRole('button', { name: /switch to dark theme/i }),
+    );
     expect(localStorage.getItem('sentinel-theme')).toBe('dark');
   });
 });
