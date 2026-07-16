@@ -1,0 +1,88 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.range {
+  margin: 0 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.arrow,
+.today {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.today {
+  height: 2rem;
+  padding: 0 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.arrow:hover,
+.today:hover {
+  border-color: var(--accent-solid);
+  color: var(--accent-text);
+}
+
+.arrow:focus-visible,
+.today:focus-visible,
+.primary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.conflicts {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger-text);
+  background: var(--danger-surface);
+  border: 1px solid var(--danger);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+}
+
+.primary {
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-solid);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.primary:hover {
+  background: var(--accent-solid-hover);
+}

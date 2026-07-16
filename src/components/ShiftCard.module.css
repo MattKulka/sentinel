@@ -1,0 +1,79 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    border-color 0.08s ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.12);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.card[data-conflict] {
+  border-color: var(--danger);
+  background: var(--danger-surface);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.time {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.duration {
+  color: var(--text-faint);
+}
+
+.who {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.who[data-unassigned] {
+  font-style: italic;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.conflict {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--danger-text);
+  background: var(--danger-surface);
+  border: 1px solid var(--danger);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+}
