@@ -31,3 +31,5 @@ blob-report
 
 # Local screenshot artifacts
 scripts/shots
+
+.vercel

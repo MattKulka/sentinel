@@ -9,7 +9,7 @@ front-end testing stack.
 [![codecov](https://codecov.io/gh/MattKulka/sentinel/branch/main/graph/badge.svg)](https://codecov.io/gh/MattKulka/sentinel)
 [![Playwright](https://img.shields.io/badge/E2E-Playwright%20%C3%97%203%20browsers-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev)
 
-> **Live demo:** _added after first deploy (Milestone 4)._
+> **Live demo:** **[sentinel-eight-azure.vercel.app](https://sentinel-eight-azure.vercel.app)** — fully functional, backed by MSW (no server).
 
 ---
 
