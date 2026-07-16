@@ -61,9 +61,7 @@ export function schedulerReducer(
       return {
         ...state,
         shifts: state.shifts.map((s) =>
-          s.id === action.shiftId
-            ? { ...s, employeeId: action.employeeId }
-            : s,
+          s.id === action.shiftId ? { ...s, employeeId: action.employeeId } : s,
         ),
       };
 

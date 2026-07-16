@@ -68,15 +68,33 @@ describe('detectConflicts', () => {
   });
 
   it('flags a fully contained shift and its container', () => {
-    const outer = shift({ id: 'outer', startMinutes: 9 * 60, endMinutes: 17 * 60 });
-    const inner = shift({ id: 'inner', startMinutes: 12 * 60, endMinutes: 13 * 60 });
-    expect(detectConflicts([outer, inner])).toEqual(new Set(['outer', 'inner']));
+    const outer = shift({
+      id: 'outer',
+      startMinutes: 9 * 60,
+      endMinutes: 17 * 60,
+    });
+    const inner = shift({
+      id: 'inner',
+      startMinutes: 12 * 60,
+      endMinutes: 13 * 60,
+    });
+    expect(detectConflicts([outer, inner])).toEqual(
+      new Set(['outer', 'inner']),
+    );
   });
 
   it('flags every shift involved in a multi-way overlap', () => {
     const all = shift({ id: 'all', startMinutes: 9 * 60, endMinutes: 17 * 60 });
-    const morning = shift({ id: 'am', startMinutes: 10 * 60, endMinutes: 11 * 60 });
-    const evening = shift({ id: 'pm', startMinutes: 16 * 60, endMinutes: 18 * 60 });
+    const morning = shift({
+      id: 'am',
+      startMinutes: 10 * 60,
+      endMinutes: 11 * 60,
+    });
+    const evening = shift({
+      id: 'pm',
+      startMinutes: 16 * 60,
+      endMinutes: 18 * 60,
+    });
     expect(detectConflicts([all, morning, evening])).toEqual(
       new Set(['all', 'am', 'pm']),
     );
@@ -85,7 +103,11 @@ describe('detectConflicts', () => {
   it('flags only the conflicting subset, leaving clean shifts out', () => {
     const a = shift({ id: 'a', startMinutes: 9 * 60, endMinutes: 12 * 60 });
     const b = shift({ id: 'b', startMinutes: 11 * 60, endMinutes: 13 * 60 });
-    const clean = shift({ id: 'c', startMinutes: 14 * 60, endMinutes: 15 * 60 });
+    const clean = shift({
+      id: 'c',
+      startMinutes: 14 * 60,
+      endMinutes: 15 * 60,
+    });
     expect(detectConflicts([a, b, clean])).toEqual(new Set(['a', 'b']));
   });
 });

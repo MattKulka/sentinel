@@ -20,7 +20,11 @@ export const handlers = [
     const patch = (await request.json()) as Partial<Shift>;
     const index = db.shifts.findIndex((s) => s.id === params.id);
     if (index === -1) return new HttpResponse(null, { status: 404 });
-    const updated = { ...db.shifts[index]!, ...patch, id: db.shifts[index]!.id };
+    const updated = {
+      ...db.shifts[index]!,
+      ...patch,
+      id: db.shifts[index]!.id,
+    };
     db.shifts[index] = updated;
     return HttpResponse.json(updated);
   }),

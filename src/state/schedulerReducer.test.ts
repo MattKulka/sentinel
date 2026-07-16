@@ -151,9 +151,9 @@ describe('schedulerReducer', () => {
     expect(schedulerReducer(prev, { type: 'MOVE_WEEK', delta: 1 }).anchor).toBe(
       '2026-07-20',
     );
-    expect(schedulerReducer(prev, { type: 'MOVE_WEEK', delta: -1 }).anchor).toBe(
-      '2026-07-06',
-    );
+    expect(
+      schedulerReducer(prev, { type: 'MOVE_WEEK', delta: -1 }).anchor,
+    ).toBe('2026-07-06');
   });
 
   it('returns the same reference for an unknown action', () => {

@@ -10,9 +10,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('shows the seeded week with conflict warnings', async ({ page }) => {
-  await expect(
-    page.getByRole('heading', { name: 'Sentinel' }),
-  ).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Sentinel' })).toBeVisible();
 
   // The seed double-books Ada on Wednesday.
   const conflictBadges = page.getByLabel(/scheduling conflict/i);
@@ -41,7 +39,9 @@ test('warns when a newly created shift double-books a person', async ({
     await page.getByRole('button', { name: /new shift/i }).click();
     const dialog = page.getByRole('dialog', { name: /new shift/i });
     await dialog.getByLabel(/title/i).fill(title);
-    await dialog.getByLabel(/assign to/i).selectOption({ label: 'Alan Turing' });
+    await dialog
+      .getByLabel(/assign to/i)
+      .selectOption({ label: 'Alan Turing' });
     await dialog.getByRole('button', { name: /save shift/i }).click();
     await expect(page.getByRole('button', { name: title })).toBeVisible();
   }
@@ -73,7 +73,5 @@ test('navigates to an empty future week', async ({ page }) => {
   }
 
   await expect(range).not.toHaveText(initial ?? '');
-  await expect(
-    page.getByText(/no shifts scheduled this week/i),
-  ).toBeVisible();
+  await expect(page.getByText(/no shifts scheduled this week/i)).toBeVisible();
 });

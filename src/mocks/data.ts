@@ -23,13 +23,62 @@ export function buildSeedShifts(monday: string): Shift[] {
   const fri = addDays(monday, 4);
 
   return [
-    { id: 's1', employeeId: 'e1', day: mon, startMinutes: h(9), endMinutes: h(13), title: 'Opening' },
-    { id: 's2', employeeId: 'e2', day: mon, startMinutes: h(13), endMinutes: h(17), title: 'Midday' },
-    { id: 's3', employeeId: 'e3', day: tue, startMinutes: h(8), endMinutes: h(16), title: 'Lead cover' },
+    {
+      id: 's1',
+      employeeId: 'e1',
+      day: mon,
+      startMinutes: h(9),
+      endMinutes: h(13),
+      title: 'Opening',
+    },
+    {
+      id: 's2',
+      employeeId: 'e2',
+      day: mon,
+      startMinutes: h(13),
+      endMinutes: h(17),
+      title: 'Midday',
+    },
+    {
+      id: 's3',
+      employeeId: 'e3',
+      day: tue,
+      startMinutes: h(8),
+      endMinutes: h(16),
+      title: 'Lead cover',
+    },
     // Ada is double-booked Wednesday morning — the two overlap.
-    { id: 's4', employeeId: 'e1', day: wed, startMinutes: h(9), endMinutes: h(12), title: 'Opening' },
-    { id: 's5', employeeId: 'e1', day: wed, startMinutes: h(11), endMinutes: h(15), title: 'Deliveries' },
-    { id: 's6', employeeId: 'e4', day: thu, startMinutes: h(12), endMinutes: h(20), title: 'Evening' },
-    { id: 's7', employeeId: null, day: fri, startMinutes: h(9), endMinutes: h(17), title: 'Open shift' },
+    {
+      id: 's4',
+      employeeId: 'e1',
+      day: wed,
+      startMinutes: h(9),
+      endMinutes: h(12),
+      title: 'Opening',
+    },
+    {
+      id: 's5',
+      employeeId: 'e1',
+      day: wed,
+      startMinutes: h(11),
+      endMinutes: h(15),
+      title: 'Deliveries',
+    },
+    {
+      id: 's6',
+      employeeId: 'e4',
+      day: thu,
+      startMinutes: h(12),
+      endMinutes: h(20),
+      title: 'Evening',
+    },
+    {
+      id: 's7',
+      employeeId: null,
+      day: fri,
+      startMinutes: h(9),
+      endMinutes: h(17),
+      title: 'Open shift',
+    },
   ];
 }

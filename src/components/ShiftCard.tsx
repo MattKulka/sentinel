@@ -25,7 +25,9 @@ export function ShiftCard({
       type="button"
       className={styles.card}
       data-conflict={isConflicting || undefined}
-      style={{ '--accent': employee?.color ?? '#94a3b8' } as React.CSSProperties}
+      style={
+        { '--accent': employee?.color ?? '#94a3b8' } as React.CSSProperties
+      }
       onClick={() => onEdit(shift)}
     >
       <span className={styles.title}>{shift.title}</span>

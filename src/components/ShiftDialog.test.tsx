@@ -130,7 +130,9 @@ describe('ShiftDialog', () => {
         }}
       />,
     );
-    expect(screen.getByRole('dialog', { name: /edit shift/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('dialog', { name: /edit shift/i }),
+    ).toBeInTheDocument();
     expect(screen.getByDisplayValue('Opening')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /delete/i }));
     expect(onDelete).toHaveBeenCalled();

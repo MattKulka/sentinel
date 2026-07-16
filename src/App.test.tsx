@@ -1,4 +1,8 @@
-import { screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import {
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { http, HttpResponse } from 'msw';
 import { describe, expect, it } from 'vitest';
 import App from './App';
@@ -44,16 +48,26 @@ describe('App', () => {
     // Create the first shift for Ada, this week.
     await user.click(screen.getByRole('button', { name: /new shift/i }));
     await user.type(screen.getByLabelText(/title/i), 'Alpha');
-    await user.selectOptions(screen.getByLabelText(/assign to/i), 'Ada Lovelace');
+    await user.selectOptions(
+      screen.getByLabelText(/assign to/i),
+      'Ada Lovelace',
+    );
     await user.click(screen.getByRole('button', { name: /save shift/i }));
 
-    expect(await screen.findByRole('button', { name: /Alpha/ })).toBeInTheDocument();
-    expect(screen.queryByLabelText(/scheduling conflict/i)).not.toBeInTheDocument();
+    expect(
+      await screen.findByRole('button', { name: /Alpha/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(/scheduling conflict/i),
+    ).not.toBeInTheDocument();
 
     // Create a second, overlapping shift for the same person on the same day.
     await user.click(screen.getByRole('button', { name: /new shift/i }));
     await user.type(screen.getByLabelText(/title/i), 'Beta');
-    await user.selectOptions(screen.getByLabelText(/assign to/i), 'Ada Lovelace');
+    await user.selectOptions(
+      screen.getByLabelText(/assign to/i),
+      'Ada Lovelace',
+    );
     await user.click(screen.getByRole('button', { name: /save shift/i }));
 
     // Both shifts are now double-booked.

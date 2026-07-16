@@ -51,9 +51,9 @@ describe('useScheduler', () => {
     });
 
     expect(result.current.state.shifts).toHaveLength(before + 1);
-    expect(
-      result.current.state.shifts.some((s) => s.title === 'Extra'),
-    ).toBe(true);
+    expect(result.current.state.shifts.some((s) => s.title === 'Extra')).toBe(
+      true,
+    );
   });
 
   it('assignShift updates the employee on a shift', async () => {

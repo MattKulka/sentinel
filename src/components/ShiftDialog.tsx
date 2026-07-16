@@ -36,7 +36,9 @@ export function ShiftDialog({
   const [day, setDay] = useState(initial.day);
   const [start, setStart] = useState(minutesToInputValue(initial.startMinutes));
   const [end, setEnd] = useState(minutesToInputValue(initial.endMinutes));
-  const [employeeId, setEmployeeId] = useState<string>(initial.employeeId ?? '');
+  const [employeeId, setEmployeeId] = useState<string>(
+    initial.employeeId ?? '',
+  );
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

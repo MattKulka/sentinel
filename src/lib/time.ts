@@ -6,11 +6,7 @@
 const MINUTES_PER_DAY = 24 * 60;
 
 function assertValidMinutes(minutes: number): void {
-  if (
-    !Number.isInteger(minutes) ||
-    minutes < 0 ||
-    minutes >= MINUTES_PER_DAY
-  ) {
+  if (!Number.isInteger(minutes) || minutes < 0 || minutes >= MINUTES_PER_DAY) {
     throw new RangeError(`minutes out of range: ${minutes}`);
   }
 }
@@ -48,7 +44,10 @@ export function parseTimeInput(value: string): number {
 }
 
 /** Human-friendly length of a shift, e.g. `"1h 30m"`, `"3h"`, `"45m"`. */
-export function durationLabel(startMinutes: number, endMinutes: number): string {
+export function durationLabel(
+  startMinutes: number,
+  endMinutes: number,
+): string {
   const total = endMinutes - startMinutes;
   const hours = Math.floor(total / 60);
   const mins = total % 60;

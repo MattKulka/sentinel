@@ -104,7 +104,9 @@ describe('WeekView', () => {
         onEditShift={noop}
       />,
     );
-    expect(screen.getByText(/no shifts scheduled this week/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/no shifts scheduled this week/i),
+    ).toBeInTheDocument();
   });
 
   it('invokes onNewShift with the column day when adding', async () => {

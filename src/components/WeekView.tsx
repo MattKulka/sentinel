@@ -60,9 +60,7 @@ export function WeekView({
                     key={shift.id}
                     shift={shift}
                     employee={
-                      shift.employeeId
-                        ? byId.get(shift.employeeId)
-                        : undefined
+                      shift.employeeId ? byId.get(shift.employeeId) : undefined
                     }
                     isConflicting={conflicts.has(shift.id)}
                     onEdit={onEditShift}
@@ -75,10 +73,7 @@ export function WeekView({
                 onClick={() => onNewShift(day)}
               >
                 + Add shift
-                <span className={styles.srOnly}>
-                  {' '}
-                  on {weekdayName(day)}
-                </span>
+                <span className={styles.srOnly}> on {weekdayName(day)}</span>
               </button>
             </section>
           );

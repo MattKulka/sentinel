@@ -10,9 +10,7 @@ import type { Shift } from './lib/types';
 import { useScheduler } from './hooks/useScheduler';
 
 type DialogState =
-  | { mode: 'create'; day: string }
-  | { mode: 'edit'; shift: Shift }
-  | null;
+  { mode: 'create'; day: string } | { mode: 'edit'; shift: Shift } | null;
 
 const DEFAULT_START = 9 * 60;
 const DEFAULT_END = 17 * 60;
