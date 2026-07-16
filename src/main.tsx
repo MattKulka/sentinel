@@ -4,8 +4,9 @@ import App from './App.tsx';
 import './index.css';
 
 async function enableMocking() {
-  // MSW backs the API in dev too, so the app is fully runnable with no backend.
-  if (!import.meta.env.DEV) return;
+  // MSW *is* the backend for this app — there is no server. Run it in every
+  // build (dev, E2E preview, and the deployed Vercel demo) so the app is always
+  // fully functional. `bypass` lets real asset requests through untouched.
   const { worker } = await import('./mocks/browser.ts');
   await worker.start({ onUnhandledRequest: 'bypass' });
 }

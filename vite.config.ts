@@ -17,6 +17,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     css: false,
+    // Unit/integration tests live in src/. Playwright owns everything in e2e/.
+    include: ['src/**/*.test.{ts,tsx}'],
+    exclude: ['e2e/**', 'node_modules/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],

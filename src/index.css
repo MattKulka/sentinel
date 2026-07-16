@@ -11,7 +11,7 @@
   --border-strong: #cbd2e0;
   --text: #1c2333;
   --text-muted: #545c6e;
-  --text-faint: #8b93a5;
+  --text-faint: #616977;
 
   --accent-solid: #4f46e5;
   --accent-solid-hover: #4338ca;
@@ -33,7 +33,7 @@ html.dark {
   --border-strong: #3a4459;
   --text: #e6eaf2;
   --text-muted: #a4adc0;
-  --text-faint: #727c92;
+  --text-faint: #99a2b4;
 
   --accent-solid: #6366f1;
   --accent-solid-hover: #7c7ff5;
@@ -55,7 +55,7 @@ html.dark {
     --border-strong: #3a4459;
     --text: #e6eaf2;
     --text-muted: #a4adc0;
-    --text-faint: #727c92;
+    --text-faint: #99a2b4;
 
     --accent-solid: #6366f1;
     --accent-solid-hover: #7c7ff5;
