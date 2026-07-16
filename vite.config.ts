@@ -22,7 +22,7 @@ export default defineConfig({
     exclude: ['e2e/**', 'node_modules/**'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'html', 'lcov'],
+      reporter: ['text', 'html', 'lcov', 'json-summary'],
       include: ['src/lib/**', 'src/state/**', 'src/hooks/**', 'src/api/**'],
       exclude: ['**/*.test.{ts,tsx}', 'src/**/types.ts'],
       thresholds: {

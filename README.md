@@ -6,7 +6,7 @@ pipeline are the product.** This repo is a showcase of an SDET-minded, industry-
 front-end testing stack.
 
 [![CI](https://github.com/MattKulka/sentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/MattKulka/sentinel/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/MattKulka/sentinel/branch/main/graph/badge.svg)](https://codecov.io/gh/MattKulka/sentinel)
+![coverage](https://raw.githubusercontent.com/MattKulka/sentinel/main/badges/coverage.svg)
 [![Playwright](https://img.shields.io/badge/E2E-Playwright%20%C3%97%203%20browsers-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev)
 
 > **Live demo:** **[sentinel-eight-azure.vercel.app](https://sentinel-eight-azure.vercel.app)** — fully functional, backed by MSW (no server).
@@ -33,7 +33,7 @@ talking points behind it.
 ## Tech stack
 
 React 19 · TypeScript (strict, no `any`) · Vite · Vitest · React Testing Library ·
-MSW · Playwright · `@axe-core/playwright` · GitHub Actions · Codecov.
+MSW · Playwright · `@axe-core/playwright` · GitHub Actions.
 
 ## Getting started
 
