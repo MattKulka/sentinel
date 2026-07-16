@@ -35,8 +35,8 @@ type Employee = { id: string; name: string; color: string; role?: string };
 type Shift = {
   id: string;
   employeeId: string | null; // null = unassigned
-  day: string;               // ISO date, e.g. "2026-07-13"
-  startMinutes: number;      // minutes from midnight
+  day: string; // ISO date, e.g. "2026-07-13"
+  startMinutes: number; // minutes from midnight
   endMinutes: number;
   title: string;
 };
@@ -60,11 +60,11 @@ fail the build if breached).
 
 ## Testing pyramid
 
-| Layer | Tool | Covers |
-|---|---|---|
-| Unit | Vitest | all of `lib/` + reducer, edge-case-first |
+| Layer       | Tool               | Covers                                                                                                                                                        |
+| ----------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit        | Vitest             | all of `lib/` + reducer, edge-case-first                                                                                                                      |
 | Integration | Vitest + RTL + MSW | load week, create-shift flow, assign flow, conflict warning renders, empty-week state, 500 → error state. Queries by role/label, behavior not implementation. |
-| E2E | Playwright + axe | happy path (create → assign → conflict), empty week; axe scan per page; 3 browsers headless |
+| E2E         | Playwright + axe   | happy path (create → assign → conflict), empty week; axe scan per page; 3 browsers headless                                                                   |
 
 ## Data flow
 
